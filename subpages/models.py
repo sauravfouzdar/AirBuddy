@@ -18,5 +18,5 @@ class memes(models.Model):
 
 
     def __str__(self):
-        return '{} by {}'.format(self.title, self.author)
+        return '{} by {}'.format(self.title, self.name)
 
