@@ -5,3 +5,7 @@ from django.shortcuts import render, redirect
 def home(request):
     template =  'index.html' 
     return render(request, template)
+
+def profile(request):
+    template =  'user_profile.html' 
+    return render(request, template)    

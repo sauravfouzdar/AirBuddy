@@ -1,0 +1,39 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4 text-center" style="margin-top: 100px;">
+   <!--==========================-->
+   <div class="card">
+    <div class="card-body">
+   <h2>Sign in</h2><br>
+   <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <!-- Email input -->
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+  
+    <!-- Password input -->
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+    <br><br>
+      <p>Not a member? <a href="{{ signup_url }}">sign up</a></p>
+      <h5>or</h5><br>
+      <img src="{% static 'img/icon-google.png' %}"> 
+      
+  </form>
+</div>
+</div>
+
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+{% endblock %}
