@@ -7,5 +7,5 @@ def home(request):
     return render(request, template)
 
 def profile(request):
-    template =  'user_profile.html' 
-    return render(request, template)    
+    template_name =  'user_profile.html' 
+    return render(request, template_name)    

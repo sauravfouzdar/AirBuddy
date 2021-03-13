@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">  </div>
+        <div class="col-md-5">
+            <div class="card" style="background-color: rgb(251, 250, 250);">
+                <div class="card-body">
+                Upload Your Favourite Memes
+                <a href="/a/memes/submit">
+                <button type="button" class="btn btn-primary btn-lg">create post<i class="fa fa-edit"></i></button>
+                </a>
+                </div>
+            </div>
+            <br>
+    <!----------POSTS---------->
+    {% for row in obj %}
+    <div class="card">
+        <p class="post-meta" style="font-size: 12px;margin: 0%;">Posted by 
+            <a href="#">u/{{row.author}}</a>
+            on {{row.created_on}}</p><hr class="hr-light">
+        <div class="card-body">
+          <h5 class="card-title">{{row.title}}</h5>
+        </div>
+
+        <img src="{{row.post_data.url}}" class="card-img-top" alt="...">
+      </div>
+      <br>
+    {% endfor %}
+
+    <!----------POSTS ENDED ---------->
+        </div>
+        <div class="col-md-4">  </div>
+
+    </div>
+
+</div>
+{% endblock %}
