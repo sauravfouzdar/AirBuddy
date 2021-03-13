@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">  </div>
+        <div class="col-md-5">
+            <div class="card" style="background-color: rgb(255, 255, 255);">
+                <div class="card-body">
+                Upload Your Confessions
+                <a href="/a/confessions/submit">
+                <button type="button" class="btn btn-primary btn-lg">create post<i class="fa fa-edit"></i></button>
+                </a>
+                </div>
+            </div>
+            <br>
+    <!----------POSTS---------->
+    {% for row in obj %}
+        <div class="card">
+            <p class="post-meta" style="font-size: 12px;margin: 0%;">Posted
+                on {{row.created_on}}</p><hr class="hr-light">
+            <div class="card-body">
+            <h5 class="card-title">{{row.title}}</h5>
+            <p style="
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              "> {{row.post_data}}</p>
+              
+              <a href="/a/confessions/{{row.pk}}"><button type="button" class="btn btn-outline-dark">Read more...</button></i></a>
+            </div>
+        
+        </div>
+      <br> <br>
+    {% endfor %}
+    </div>
+    <!----------POSTS ENDED ---------->
+        <div class="col-md-4">
+            <div class="card" style="width: 300px;">
+
+                <div class="card-body">
+                    <h5 class="card-title">About a/Confessions</h5>
+                    <hr class="hr-light">
+                <p class="post-meta" style="margin-left: 5px;">
+                    A airbuddy subpage to share your confession Anonymously
+                   </p>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+{% endblock %}
