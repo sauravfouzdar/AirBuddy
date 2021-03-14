@@ -22,3 +22,8 @@ class WebDevelopmentForm(ModelForm):
     class Meta:
         model = WebDevelopment
         exclude = ('created_on','author')   
+
+class examCornerForm(ModelForm):
+    class Meta:
+        model = examCorner
+        exclude = ('created_on','author')   

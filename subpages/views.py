@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from .models import memes, confessions, ml, WebDevelopment
+from .models import memes, confessions, ml, WebDevelopment, examCorner
 import datetime
-from .forms import memesForm, confessionsForm, mlForm, WebDevelopmentForm
+from .forms import memesForm, confessionsForm, mlForm, WebDevelopmentForm, examCornerForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -136,9 +136,42 @@ def webd_create(request):
             return redirect(webd_main)
     return render(request, template_name, context)   
 
- 
+####
+def examCorner_main(request):
+    obj = examCorner.objects.all().order_by('-id')
+    template_name = 'examCorner_main.html'
+    context = {'obj':obj}
+
+    return render(request, template_name, context)
+
+@login_required
+def examCorner_create(request):
+    template_name = 'examCorner_create.html'
+    form = examCornerForm()
+    context = {'form':form}
+    if request.method == 'POST':
+        form = examCornerForm(request.POST, request.FILES)   
+        if form.is_valid():
+            obj = form.save(commit = False) 
+            obj.author = request.user 
+            obj.save()
+            return redirect(examCorner_main)
+    return render(request, template_name, context) 
 
 
 
+@login_required
+def examCorner_body(request,pk):
+    obj = examCorner.objects.get(pk=pk)
+    template_name = 'examCorner_body.html'
+    context = {
+        'body':obj.description,
+        'title':obj.title,
+        'date':obj.created_on,
+        'author':obj.author,
+        'post_data':obj.post_data,
+    }
+
+    return render(request, template_name, context)
 
 

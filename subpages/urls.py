@@ -18,6 +18,10 @@ urlpatterns = [
     url(r'^a/webd/(?P<pk>\d+)$', views.webd_body, name='webd_body'),
     url(r'^a/webd/submit/$', views.webd_create, name='webd_create'),
 
+    url(r'^a/examCorner/$', views.examCorner_main, name='examCorner_main'),
+    url(r'^a/examCorner/(?P<pk>\d+)$', views.examCorner_body, name='examCorner_body'),
+    url(r'^a/examCorner/submit/$', views.examCorner_create, name='examCorner_create'),
+
 
     
 ]

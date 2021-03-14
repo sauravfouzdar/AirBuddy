@@ -35,9 +35,9 @@ class examCorner(models.Model):
                         on_delete=models.CASCADE,
                         related_name = 'examCorner_post',
                         )
-    description = models.TextField(max_length=5000)                    
     title = models.TextField(max_length=100)
-    post_data = models.FileField(upload_to='ExamCorner')
+    description = models.TextField(max_length=5000)                    
+    post_data = models.FileField(upload_to='ExamCorner', blank=True,null=True)
     created_on = models.DateTimeField(auto_now_add = True)
 
 
