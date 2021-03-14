@@ -51,8 +51,8 @@ class WebDevelopment(models.Model):
                         on_delete=models.CASCADE,
                         related_name = 'webdev_post',
                         )
+    title = models.TextField(max_length=100)                    
     description = models.TextField(max_length=5000)                    
-    title = models.TextField(max_length=100)
     created_on = models.DateTimeField(auto_now_add = True)
 
 
@@ -60,12 +60,14 @@ class WebDevelopment(models.Model):
         return '{} by {}'.format(self.title, self.author)
 
 
-class Machinelearning(models.Model):
+class ml(models.Model):
     author = models.ForeignKey(
                         settings.AUTH_USER_MODEL,
                         on_delete=models.CASCADE,
                         related_name = 'ml_post',
                         )
-    description = models.TextField(max_length=5000)                    
     title = models.TextField(max_length=100)
+    description = models.TextField(max_length=5000)                    
     created_on = models.DateTimeField(auto_now_add = True)
+    def __str__(self):
+        return '{} by {}'.format(self.title, self.author)

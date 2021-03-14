@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from .models import memes, confessions
+from .models import memes, confessions, ml, WebDevelopment
 import datetime
-from .forms import memesForm, confessionsForm
+from .forms import memesForm, confessionsForm, mlForm, WebDevelopmentForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -60,5 +60,85 @@ def confession_create(request):
             obj.save()
             return redirect(confessions_main)
     return render(request, template_name, context)   
+
+
+###########
+
+@login_required
+def ml_main(request):
+    obj = ml.objects.all().order_by('-id')
+    template_name = 'ml_main.html'
+    context = {'obj':obj}
+
+    return render(request, template_name, context)
+
+@login_required
+def ml_body(request,pk):
+    obj = ml.objects.get(pk=pk)
+    template_name = 'ml_body.html'
+    context = {
+        'body':obj.description,
+        'title':obj.title,
+        'date':obj.created_on,
+        'author':obj.author
+    }
+
+    return render(request, template_name, context)
+
+@login_required
+def ml_create(request):
+    template_name = 'ml_create.html'
+    form = mlForm()
+    context = {'form':form}
+    if request.method == 'POST':
+        form = mlForm(request.POST, request.FILES)   
+        if form.is_valid():
+            obj = form.save(commit = False) 
+            obj.author = request.user 
+            obj.save()
+            return redirect(ml_main)
+    return render(request, template_name, context)  
+
+######
+    
+@login_required
+def webd_main(request):
+    obj = WebDevelopment.objects.all().order_by('-id')
+    template_name = 'webd_main.html'
+    context = {'obj':obj}
+
+    return render(request, template_name, context)
+
+@login_required
+def webd_body(request,pk):
+    obj = WebDevelopment.objects.get(pk=pk)
+    template_name = 'webd_body.html'
+    context = {
+        'body':obj.description,
+        'title':obj.title,
+        'date':obj.created_on,
+        'author':obj.author
+    }
+
+    return render(request, template_name, context)
+
+@login_required
+def webd_create(request):
+    template_name = 'webd_create.html'
+    form = WebDevelopmentForm()
+    context = {'form':form}
+    if request.method == 'POST':
+        form = WebDevelopmentForm(request.POST, request.FILES)   
+        if form.is_valid():
+            obj = form.save(commit = False) 
+            obj.author = request.user 
+            obj.save()
+            return redirect(webd_main)
+    return render(request, template_name, context)   
+
+ 
+
+
+
 
 

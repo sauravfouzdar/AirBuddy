@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import memes, confessions
+from .models import memes, confessions, ml, WebDevelopment, examCorner
 
 class memesForm(ModelForm):
     class Meta:
@@ -11,3 +11,14 @@ class confessionsForm(ModelForm):
     class Meta:
         model = confessions
         exclude = ('created_on','author')
+
+class mlForm(ModelForm):
+    class Meta:
+        model = ml
+        exclude = ('created_on','author')   
+
+
+class WebDevelopmentForm(ModelForm):
+    class Meta:
+        model = WebDevelopment
+        exclude = ('created_on','author')   
