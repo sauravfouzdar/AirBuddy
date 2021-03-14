@@ -16,31 +16,31 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">AirBuddy</a>
+        <a class="navbar-brand" href="/"><strong>AirBuddy</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="/"><strong>Home</strong></a>
             </li>
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Subpages
+                <strong>Subpages</strong>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Machine Learning</a></li>
-                <li><a class="dropdown-item" href="#">Memes</a></li>
-                <li><a class="dropdown-item" href="#">Web Development</a></li>
-                <li><a class="dropdown-item" href="#">Exam Corner</a></li>
-                <li><a class="dropdown-item" href="#">Confession</a></li>
+                <li><a class="dropdown-item" href="/a/ml">a/Machine Learning</a></li>
+                <li><a class="dropdown-item" href="/a/memes">a/Memes</a></li>
+                <li><a class="dropdown-item" href="/a/webd">a/Web Development</a></li>
+                <li><a class="dropdown-item" href="/a/examCorner">a/Exam Corner</a></li>
+                <li><a class="dropdown-item" href="/a/confessions">a/Confession</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Write Feedback</a></li>
+                <li><a class="dropdown-item" href="#">a/Write Feedback</a></li>
               </ul>
             </li>
           </ul>
@@ -53,26 +53,24 @@
           </ul>
 
           <ul class="nav justify-content-end">
-            <li class="nav-item">
-              
-              <a href="#" class="nav-link active" aria-current="page"><i class="fa fa-edit"></i></i> </a>
-            </li>
             {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span class="no-icon"></span>^_^{{ user.get_username }}</span>
+                      <strong>^_^{{ user.get_username }}</strong>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="/accounts/profile">Profile</a><div class="divider"></li>
                       <li> <a class="dropdown-item" href="/accounts/logout">Logout</a><div class="divider"></li>
                   </ul>
               </li>
-                {% else %}
+              {% else %}
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/accounts/login"><strong>Login/Signup </strong></a>
             </li>
             {% endif %}
           </ul>
+          
+
         </div>
       </div>
     </nav>

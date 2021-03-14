@@ -1,6 +1,47 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-user ptofile
+<br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">  </div>
+        <div class="col-md-5">
+            <div class="card" style="background-color: rgb(255, 255, 255);">
+                <div class="card-body">
+                <a href="">
+                <button type="button" class="btn btn-primary btn-lg">My Posts</button>
+                <button type="button" class="btn btn-primary btn-lg">Followers</button>
+                <button type="button" class="btn btn-secondary btn-lg">start chat</button>
+                </a>
+                </div>
+            </div>
+            <br>
+    <!----------POSTS---------->
+    {% for row in obj %}
+
+        <div class="card">
+            <p class="post-meta" style="font-size: 12px;margin: 0%;">Posted by 
+                <a href="#">u/{{row.author}}</a>
+                on {{row.created_on}}</p><hr class="hr-light">
+            <div class="card-body">
+            <h5 class="card-title">{{row.title}}</h5>
+            </div>
+
+            <img src="{{row.post_data.url}}" class="card-img-top" alt="...">
+        </div>
+        
+      <br> <br>
+      
+    {% endfor %}
+    </div>
+    <!----------POSTS ENDED ---------->
+        <div class="col-md-4">
+        </div>
+
+
+
+    </div>
+</div>
 {% endblock %}
