@@ -19,3 +19,8 @@ def profile(request):
     template_name =  'user_profile.html' 
     context = {'obj':obj}
     return render(request, template_name, context)    
+
+def main_submit(request):
+    template_name =  'main_submit.html' 
+    context = {}
+    return render(request, template_name, context)    

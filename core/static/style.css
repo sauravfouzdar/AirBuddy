@@ -1,0 +1,30 @@
+body{
+    background-color:#F2F3F4;
+    
+}
+
+.navbar
+ {
+     background: #FDFEFE!important;
+ }
+ .navbar ul li a:hover
+ {
+     color:#a1a2a4!important;    /*color*/
+     
+ }
+ .nav-item a{
+     color: black;
+ }
+ p a {
+    text-decoration: none;
+    color: black;
+  }
+a:hover{
+    color: #a1a2a4;
+}  
+
+.profile-image img{
+    height: 200px!important;
+    width: 100!important;
+}
+

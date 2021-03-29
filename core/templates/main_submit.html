@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">  </div>
+        <div class="col-md-5">
+            <div class="card" style="background-color: rgb(255, 255, 255);">
+                <div class="card-body">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Select a subpage to create post
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="/a/ml/submit">a/Machine Learning</a></li>
+                            <li><a class="dropdown-item" href="/a/memes/submit">a/Memes</a></li>
+                            <li><a class="dropdown-item" href="/a/webd/submit">a/Web Development</a></li>
+                            <li><a class="dropdown-item" href="/a/examCorner/submit">a/Exam Corner</a></li>
+                            <li><a class="dropdown-item" href="/a/confessions/submit">a/Confession</a></li>
+                            <li><a class="dropdown-item" href="/a/airshots/submit">a/airshots</a></li>
+                        </ul>
+                      </div>
+               
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>        
+        
+{% endblock %}

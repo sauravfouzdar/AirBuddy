@@ -6,33 +6,36 @@
 
 {% block content %}
 
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center" style="margin-top: 100px;">
+        <!--==========================-->
+          <div class="card">
+            <div class="card-body">
+          <h2>Sign up</h2><br>
+        <p>{% blocktrans %}Already have an account? <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <br>
+          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            <table>
+            {{ form.as_p }}
+          </table>
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Sign up</button>
+        <br><br>
+            
+            <h5>or sign up with</h5><br>
+            <img src="{% static 'img/icon-google.png' %}"> 
+      </form>
 
-<div class="row">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-4 text-center" style="margin-top: 100px;">
-   <!--==========================-->
-   <div class="card">
-    <div class="card-body">
-   <h2>Sign up</h2><br>
-<p>{% blocktrans %}Already have an account? <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-<br>
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit" class="btn btn-primary">Sign up</button>
-  <br><br>
-      
-      <h5>or sign up with</h5><br>
-      <img src="{% static 'frontend/img/icon-google.png' %}"> 
-</form>
-
-</div>
-</div>
+      </div>
+      </div>
+        </div>
+      <div class="col-sm-4"></div>
   </div>
-<div class="col-sm-4"></div>
 </div>
 
 {% endblock %}

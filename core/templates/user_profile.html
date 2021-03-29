@@ -6,38 +6,58 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">  </div>
-        <div class="col-md-5">
-            <div class="card" style="background-color: rgb(255, 255, 255);">
+
+        <div class="col-md-1"></div>
+        <div class="col-md-3"> 
+            <div class="card" style="width: 220px;margin-left: 120px;">
+    
                 <div class="card-body">
-                <a href="">
-                <button type="button" class="btn btn-primary btn-lg">My Posts</button>
-                <button type="button" class="btn btn-primary btn-lg">Followers</button>
-                <button type="button" class="btn btn-secondary btn-lg">start chat</button>
-                </a>
-                </div>
+                    <h5 class="card-title">{{ user.get_username }}</h5>
+                    <hr class="hr-light">
+                <p class="post-meta" style="margin-left: 5px;">
+                    <a href="/accounts/post"> <i class="fab fa-usps"></i> My post</a>
+                    </p>
+        <p class="post-meta" style="margin-left: 5px;">
+            <a href="/accounts/mysubpages"> <i class="fas fa-file-alt"></i> Subpages you follow</a>
+                    </p>
+                    <p class="post-meta" style="margin-left: 5px;">
+                        <a href="#">  <i class="fas fa-key"></i> Change password</a>
+                                </p>
+                                <p class="post-meta" style="margin-left: 5px;">
+                                    <a href="/accounts/notifications">   <i class="fas fa-comment-alt"></i> Notifications</a>
+                                            </p>
+                                
+                                <p class="post-meta" style="margin-left: 5px;">
+                                    <a href="/accounts/Bookmarks"> <i class="fas fa-bookmark"></i> Bookmarks</a>
+                                            </p>
+                                <p class="post-meta" style="margin-left: 5px;">
+                                    <a href="/accounts/logout">  <i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                            </p>
+                                           
+                               
             </div>
-            <br>
-    <!----------POSTS---------->
-    {% for row in obj %}
-
-        <div class="card">
-            <p class="post-meta" style="font-size: 12px;margin: 0%;">Posted by 
-                <a href="#">u/{{row.author}}</a>
-                on {{row.created_on}}</p><hr class="hr-light">
-            <div class="card-body">
-            <h5 class="card-title">{{row.title}}</h5>
-            </div>
-
-            <img src="{{row.post_data.url}}" class="card-img-top" alt="...">
+        </div>    
         </div>
-        
-      <br> <br>
-      
-    {% endfor %}
-    </div>
-    <!----------POSTS ENDED ---------->
+        <div class="col-md-4"> 
+            <div class="card">
+                <h5 class="card-title">User Detail</h5>
+                <p class="post-meta" style="margin-left: 5px;">
+                     <strong>Username :</strong>  {{user.get_username}}
+                    </p>
+                    <p class="post-meta" style="margin-left: 5px;">
+                        <strong>First name :</strong>
+                       </p>
+                       <p class="post-meta" style="margin-left: 5px;">
+                        <strong>Last name :</strong>
+                       </p>
+                       <p class="post-meta" style="margin-left: 5px;">
+                        <strong>E-mail</strong>(primary) <strong>:</strong> {{user.email}}
+                       </p>
+                </div>
+        </div>
+    
         <div class="col-md-4">
+            <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="profile-image" class="profile-image" style="height: 220px;width: 250px;">
         </div>
 
 

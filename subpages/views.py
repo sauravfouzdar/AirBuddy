@@ -55,9 +55,9 @@ def confession_create(request):
     form = confessionsForm()
     context = {'form':form}
     if request.method == 'POST':
-        form = memesForm(request.POST, request.FILES)   
+        form = confessionsForm(request.POST, request.FILES)   
         if form.is_valid():
-            obj.save()
+            form.save()
             return redirect(confessions_main)
     return render(request, template_name, context)   
 

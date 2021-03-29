@@ -23,15 +23,10 @@
             <a href="#">u/{{row.author}}</a> on {{row.created_on}}</p><hr class="hr-light">
             <div class="card-body">
             <h5 class="card-title">{{row.title}}</h5>
-            <p style="
-                overflow : hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-              "> {{row.description}}</p>
-              
-              <a href="/a/ml/{{row.pk}}"><button type="button" class="btn btn-outline-dark">Read more...</button></i></a>
+            <details>
+                <summary>read more..</summary>
+                <p>{{row.description}}</p>
+              </details>
             </div>
         
         </div>
@@ -39,34 +34,58 @@
     {% endfor %}
     </div>
     <!----------POSTS ENDED ---------->
-        <div class="col-md-4">
-            <div class="card" style="width: 300px;">
+       <!----------POSTS ENDED ---------->
+       <div class="col-md-4">
+        <div class="card" style="width: 300px;background-color: #ABEBC6">
 
-                <div class="card-body">
-                    <h5 class="card-title">About a/Machine Learning</h5>
-                    <hr class="hr-light">
-                <p class="post-meta" style="margin-left: 5px;">
-                    A airbuddy subpage to share your knowledge on Machine Learning topics
-                    with community members
-                   </p>
-                </div>
-            </div>
-            <br><br>
-            <div class="card" style="width: 300px;">
+            <div class="card-body">
+                <h5 class="card-title">About a/Machine Learning</h5>
+                <hr class="hr-light">
+            <p class="post-meta" style="margin-left: 5px;">
+               An airbuddy subpage to share articles related to machine learning.
+               </p>
+        </div>
+        </div>
+        <br><br>
+        <div class="card" style="width: 300px;background-color: #ABEBC6">
 
-                <div class="card-body">
-                    <h5 class="card-title">Top Subpages</h5>
-                    <hr class="hr-light">
-                <p class="post-meta" style="margin-left: 5px;">
-                    <a href="/a/memes"> a/Memes</a>
-                   </p>
-    <p class="post-meta" style="margin-left: 5px;">
-        <a href="/a/confessions"> a/confessions</a>
-                   </p>
-                   <p class="post-meta" style="margin-left: 5px;">
-                    <a href="/a/ml"> a/Machine Learning</a>
-                               </p>
-            </div>
+            <div class="card-body">
+                <h5 class="card-title">Top Subpages</h5>
+                <hr class="hr-light">
+            <p class="post-meta" style="margin-left: 5px;">
+                <a href="/a/memes"> <i class="fas fa-user-circle"></i> a/Memes</a>
+               </p>
+<p class="post-meta" style="margin-left: 5px;">
+    <a href="/a/confessions">  <i class="fas fa-user-circle"></i> a/confessions</a>
+               </p>
+               <p class="post-meta" style="margin-left: 5px;">
+                <a href="/a/ml">  <i class="fas fa-user-circle"></i> a/Machine Learning</a>
+                           </p>
+                           <p class="post-meta" style="margin-left: 5px;">
+                            <a href="/a/airshots">  <i class="fas fa-user-circle"></i> a/airshots</a>
+                                       </p>
+                                       <p class="post-meta" style="margin-left: 5px;">
+                                        <a href="/a/examCorner"> <i class="fas fa-user-circle"></i> a/Exam Corner</a>
+                                                   </p>
+        </div>
+    </div>
+        <!----------About us------>
+        <br><br>
+        <div class="card" style="width: 300px;">
+
+            <div class="card-body">
+                <h5 class="card-title">AirBuddy inc.</h5>
+                <hr class="hr-light">
+            
+                <p style="margin-left: 5px;">
+                    <a href=""> <small style="font-size: 12px;">About</small></a>
+                    <a href=""><small style="font-size: 12px;">terms&conditions</small> </a>
+                    <a href=""><small style="font-size: 12px;">reportBug</small> </a>
+                    <a href=""><small style="font-size: 12px;">communities</small> </a>
+                    <a href=""><small style="font-size: 12px;">guidelines</small> </a>
+                    <a href=""><small style="font-size: 12px;">privacy</small> </a>
+               </p>
+ 
         </div>
 
 
