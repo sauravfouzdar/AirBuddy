@@ -4,7 +4,7 @@
   - AirBuddy is a one to all Knowledge sharing social Web Application.
   - Users can create Different `SUBPAGES` to share their thoughts, ideas in that subpage in form of Articles, Images, Videos, etc related to subpage topic(Such as Technology, Science, Finance, Memes, Confessions).
 ### About `ScreenShots`
-  ![alt text](https://github.com/sauravfouzdar/AirBuddy/screenshots/user-profile.png?raw=true)
+  ![user profile](https://github.com/sauravfouzdar/AirBuddy/blob/main/screenshots/user-profile.png)
   
 ### Need 
   - Due to Covid19 Entire World has gone online in Education, Businesses etc.
